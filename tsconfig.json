@@ -1,15 +1,37 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    /* Basic Options */
     "declaration": true,
-    "removeComments": true,
+    "declarationMap": true,
+    "incremental": true,
+    "isolatedModules": true,
+    "module": "commonjs",
+    "outDir": "dist",
+    "sourceMap": true,
+    "target": "esnext",
+
+    /* Strict Type-Checking Options */
+    "strict": true,
+
+    /* Additional Checks */
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitOverride": true,
+    "noImplicitReturns": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+
+    /* Module Resolution Options */
+    "esModuleInterop": true,
+
+    /* Experimental Options */
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "allowSyntheticDefaultImports": true,
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "./dist",
-    "baseUrl": "./",
-    "incremental": true
+
+    /* Advanced Options */
+    "forceConsistentCasingInFileNames": true,
+    "importsNotUsedAsValues": "error",
+    "skipLibCheck": true
   }
 }
