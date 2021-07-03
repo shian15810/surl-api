@@ -1,12 +1,12 @@
 import { NestApplication, NestFactory } from '@nestjs/core';
-import { Logger } from 'nestjs-pino';
 import { AppModule } from './app.module';
 import { EnvService } from './env/env.service';
+import { LoggerService } from './logger/logger.service';
 
 const bootstrap = async () => {
   const app = await NestFactory.create(AppModule);
 
-  const loggerService = app.get(Logger);
+  const loggerService = app.get(LoggerService);
 
   app.useLogger(loggerService);
 

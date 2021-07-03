@@ -1,12 +1,12 @@
 import { ConfigModule } from '@nestjs/config';
-import { Test, TestingModule } from '@nestjs/testing';
+import { Test } from '@nestjs/testing';
 import { EnvService } from './env.service';
 
 describe('EnvService', () => {
-  let service: EnvService;
+  let envService: EnvService;
 
   beforeEach(async () => {
-    const module: TestingModule = await Test.createTestingModule({
+    const testingModule = await Test.createTestingModule({
       imports: [
         ConfigModule.forRoot({
           validate: EnvService.validate,
@@ -15,10 +15,10 @@ describe('EnvService', () => {
       providers: [EnvService],
     }).compile();
 
-    service = module.get(EnvService);
+    envService = testingModule.get(EnvService);
   });
 
   it('should be defined', () => {
-    expect(service).toBeDefined();
+    expect(envService).toBeDefined();
   });
 });
