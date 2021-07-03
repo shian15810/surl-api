@@ -3,7 +3,7 @@ import { z } from 'zod';
 
 const NodeEnvEnum = z.enum(['development', 'test', 'production']);
 
-const NodeEnv = NodeEnvEnum.enum;
+export const NodeEnv = NodeEnvEnum.enum;
 
 export const Default = {
   NODE_ENV: NodeEnv.development,
