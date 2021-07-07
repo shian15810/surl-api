@@ -1,15 +1,24 @@
 import { Test } from '@nestjs/testing';
+import { PARAMS_PROVIDER_TOKEN, PinoLogger } from 'nestjs-pino';
+
 import { LoggerService } from './logger.service';
 
 describe('LoggerService', () => {
   let loggerService: LoggerService;
 
   beforeEach(async () => {
-    const testingModule = await Test.createTestingModule({
-      providers: [LoggerService],
+    const moduleRef = await Test.createTestingModule({
+      providers: [
+        PinoLogger,
+        {
+          provide: PARAMS_PROVIDER_TOKEN,
+          useValue: {},
+        },
+        LoggerService,
+      ],
     }).compile();
 
-    loggerService = testingModule.get(LoggerService);
+    loggerService = moduleRef.get(LoggerService);
   });
 
   it('should be defined', () => {
