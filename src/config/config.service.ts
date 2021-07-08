@@ -9,6 +9,8 @@ import type { Config } from './config.interface';
 export class ConfigService extends NestConfigService<Config> implements Config {
   private readonly options: ConfigGetOptions = { infer: true };
 
+  public readonly CI = this.get('CI', this.options) ?? ConfigDefault.CI;
+
   public readonly NODE_ENV =
     this.get('NODE_ENV', this.options) ?? ConfigDefault.NODE_ENV;
 

@@ -13,7 +13,9 @@ import { LoggerService } from './logger.service';
       useFactory: (configService: ConfigService) => ({
         pinoHttp: {
           autoLogging: configService.NODE_ENV !== 'test',
-          prettyPrint: configService.NODE_ENV === 'development',
+          prettyPrint:
+            configService.NODE_ENV === 'development' ||
+            (configService.NODE_ENV === 'test' && !configService.CI),
         },
       }),
     }),
