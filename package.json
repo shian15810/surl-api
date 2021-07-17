@@ -18,13 +18,13 @@
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-    "test:e2e": "jest --config ./test/jest-e2e.json"
+    "test:e2e": "jest --config ./test/jest-e2e.config.ts"
   },
   "dependencies": {
-    "@nestjs/common": "^8.0.3",
+    "@nestjs/common": "^8.0.4",
     "@nestjs/config": "^1.0.0",
-    "@nestjs/core": "^8.0.3",
-    "@nestjs/platform-express": "^8.0.3",
+    "@nestjs/core": "^8.0.4",
+    "@nestjs/platform-express": "^8.0.4",
     "helmet": "^4.6.0",
     "nestjs-pino": "^1.4.0",
     "reflect-metadata": "^0.1.13",
@@ -33,12 +33,13 @@
     "zod": "^3.5.1"
   },
   "devDependencies": {
+    "@jest/types": "^27.0.6",
     "@nestjs/cli": "^8.0.2",
-    "@nestjs/schematics": "^8.0.1",
-    "@nestjs/testing": "^8.0.3",
+    "@nestjs/schematics": "^8.0.2",
+    "@nestjs/testing": "^8.0.4",
     "@types/express": "^4.17.13",
     "@types/jest": "^26.0.24",
-    "@types/node": "^16.3.2",
+    "@types/node": "^16.3.3",
     "@types/supertest": "^2.0.11",
     "@types/validator": "^13.6.3",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
@@ -59,22 +60,5 @@
   },
   "engines": {
     "node": "16"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".*\\.spec\\.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "collectCoverageFrom": [
-      "**/*.(t|j)s"
-    ],
-    "coverageDirectory": "../coverage",
-    "testEnvironment": "node"
   }
 }
