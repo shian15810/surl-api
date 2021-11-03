@@ -29,7 +29,7 @@
     "nestjs-pino": "^1.4.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0",
-    "validator": "^13.6.0",
+    "validator": "^13.7.0",
     "zod": "^3.5.1"
   },
   "devDependencies": {
